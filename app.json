@@ -4,5 +4,8 @@
   "repository": "https://github.com/netuoso/cryptofolio",
   "logo": "https://s-media-cache-ak0.pinimg.com/originals/ef/da/8b/efda8b6316786f2ff349f3065974249b.jpg",
   "keywords": ["cryptofolio", "cryptocurrency", "bitcoin", "ethereum", "coinmarketcap"],
-  "addons": ["heroku-postgresql:hobby-dev"]
+  "addons": ["heroku-postgresql:hobby-dev"],
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  }
 }
