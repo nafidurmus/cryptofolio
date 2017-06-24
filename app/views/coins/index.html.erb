@@ -26,16 +26,16 @@
       <% @coins.each do |coin| %>
         <% coin_data = coin.recorded_prices.last %>
         <tr>
-          <td><%= coin_data.rank %></td>
+          <td><%= coin_data.try(:rank) || "N/A" %></td>
           <td><%= coin.name %></td>
           <td><%= coin.symbol %></td>
-          <td><%= number_to_currency(coin_data.usd) %></td>
-          <td>Ƀ<%= coin_data.btc %></td>
-          <td><%= number_to_currency(coin_data.market_cap) %></td>
-          <td><%= number_to_currency(coin_data.vol_24h) %></td>
-          <td><%= coin_data.pct_1h %></td>
-          <td><%= coin_data.pct_24h %></td>
-          <td><%= coin_data.pct_7d %></td>
+          <td><%= number_to_currency(coin_data.try(:usd) || 0) %></td>
+          <td>Ƀ<%= coin_data.try(:btc) || "N/A" %></td>
+          <td><%= number_to_currency(coin_data.try(:market_cap) || 0) %></td>
+          <td><%= number_to_currency(coin_data.try(:vol_24h) || 0) %></td>
+          <td><%= coin_data.try(:pct_1h) || "N/A" %></td>
+          <td><%= coin_data.try(:pct_24h) || "N/A" %></td>
+          <td><%= coin_data.try(:pct_7d) || "N/A" %></td>
         </tr>
       <% end %>
 
