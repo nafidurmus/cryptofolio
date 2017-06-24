@@ -29,4 +29,5 @@ end
 group :development do
   gem 'web-console', '>= 3.3.0'
   gem 'listen'
+  gem 'rails_real_favicon'
 end

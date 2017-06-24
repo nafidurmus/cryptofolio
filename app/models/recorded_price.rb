@@ -42,7 +42,8 @@ class RecordedPrice < ApplicationRecord
 
   def check_records_count
     if RecordedPrice.count > 8000
-      RecordedPrice.first(6000).delete_all
+      sql = "delete from recorded_prices where id in (select id from recorded_prices limit 7000);"
+      ActiveRecord::Base.connection.execute(sql)
     end
   end
 end
