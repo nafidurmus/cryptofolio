@@ -1,0 +1,1 @@
+FetchPriceWorker.perform_async

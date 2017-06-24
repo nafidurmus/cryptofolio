@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usd: 1.5
+  btc: 1.5
+  eth: 1.5
+  1h_pct: 1.5
+  24h_pct: 1.5
+  7d_pct: 1.5
+
+two:
+  usd: 1.5
+  btc: 1.5
+  eth: 1.5
+  1h_pct: 1.5
+  24h_pct: 1.5
+  7d_pct: 1.5

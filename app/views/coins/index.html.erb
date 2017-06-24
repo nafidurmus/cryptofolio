@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+
+  <div class="col-xs-12">
+    <h2>Ticker Data</h2>
+  </div>
+
+  <table id="ticker_data" class="table table-striped tablesorter">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Value USD</th>
+        <th>Value BTC</th>
+        <th>Market Cap</th>
+        <th>24 hour volume</th>
+        <th>1 hour change</th>
+        <th>24 hour change</th>
+        <th>7 day change</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @coins.each do |coin| %>
+        <% coin_data = coin.recorded_prices.last %>
+        <tr>
+          <td><%= coin_data.rank %></td>
+          <td><%= coin.name %></td>
+          <td><%= coin.symbol %></td>
+          <td><%= number_to_currency(coin_data.usd) %></td>
+          <td>Ƀ<%= coin_data.btc %></td>
+          <td><%= number_to_currency(coin_data.market_cap) %></td>
+          <td><%= number_to_currency(coin_data.vol_24h) %></td>
+          <td><%= coin_data.pct_1h %></td>
+          <td><%= coin_data.pct_24h %></td>
+          <td><%= coin_data.pct_7d %></td>
+        </tr>
+      <% end %>
+
+    </tbody>
+  </table>
+
+</div>
+
+<script type="text/javascript">
+  $("#ticker_data").tablesorter();
+</script>
