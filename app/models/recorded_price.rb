@@ -1,4 +1,6 @@
 class RecordedPrice < ApplicationRecord
+  before_save :check_records_count
+
   def self.fetch_prices
     begin
       Rails.logger.info { "Fetching prices from CoinMarketCap" }
@@ -34,5 +36,13 @@ class RecordedPrice < ApplicationRecord
     end
 
     RecordedPrice.create!(price_attributes) unless price_attributes.empty?
+  end
+
+  private
+
+  def check_records_count
+    if RecordedPrice.count > 8000
+      RecordedPrice.first(6000).delete_all
+    end
   end
 end
