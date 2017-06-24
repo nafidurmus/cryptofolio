@@ -2,6 +2,9 @@
 
 # README
 
+## Example app
+- https://cryptofoliotest.herokuapp.com
+
 ## Cryptocurrency Price Ticker
 - Queries CoinMarketCap for list of coins
 - Creates `Coin` records with names of coins and symbol
