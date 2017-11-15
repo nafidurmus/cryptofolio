@@ -3,7 +3,7 @@
 # README
 
 ## Example app
-- https://cryptofoliotest.herokuapp.com
+- https://sanal-para.herokuapp.com/
 
 ## Cryptocurrency Price Ticker
 - Queries CoinMarketCap for list of coins
